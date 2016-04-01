@@ -62,8 +62,9 @@ public class Verify_Broken_Links {
 					
 					
 					
-					if (url != null && !url.contains("javascript")&& !url.contains("hello@imoney.sg") && !url.contains("03 2106 5434")
-							&& !url.contains("tel:+639174135028") && !url.contains("tel:+639174135028")  )
+
+					if (url != null && !url.contains("javascript")&& !url.contains("") && !url.contains("03 2106 5434")
+							&& !url.contains("tel:+639174135028") && !url.contains("")  )
 					
 					
 					
@@ -103,6 +104,7 @@ public class Verify_Broken_Links {
 			// increment invalid link count
 			////We can also check for 404 status code like response.getStatusLine().getStatusCode() == 404
 			if (response.getStatusLine().getStatusCode() == 404){
+              
 				
 			    System.out.println("The Broken links are " + url);
 			    System.out.println(url);

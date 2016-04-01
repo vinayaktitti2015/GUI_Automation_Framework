@@ -7,17 +7,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.testng.Assert;
+
 import Base_Utils.Capture_dropdown_elements;
 import Base_Utils.Dropdown_Feature;
 import Base_Utils.Dropdown_elements_clickable;
 import Base_Utils.Take_Screenshot;
-import Base_Utils.Verify_Header;
+import Base_Utils.Wait_Commands;
+import Base_Utils_Verify.Verify_Text;
 import POM_Files.Newlaunch_POM_File;
 
 public class Verify_SortBy_ListingPerPage {
 	
+
+	 public static final String ANSI_RESET = "\u001B[0m";
+	 public static final String ANSI_BLACK = "\u001B[30m";
+	 public static final String ANSI_RED = "\u001B[31m";
+	 public static final String ANSI_GREEN = "\u001B[32m";
 	
-	public static void Execute(WebDriver driver , WebElement locator) throws IOException, InterruptedException   {
+	
+	public static void Execute(WebDriver driver , WebElement locator1, int value , int expected ) throws IOException, InterruptedException   {
 		
 		
 		
@@ -31,52 +40,50 @@ public class Verify_SortBy_ListingPerPage {
         page.search_Btn.click();
         Thread.sleep(2000);
 
-        // Validate Header breadcumb
-
-        Verify_Header.Execute(driver, page.header_breadcumb, "New Properties for Sale");
+        // put implicit wait
         
-		
-		
-		System.out.println("Verify capture sort by function elements.......");
+        Wait_Commands.Executeimplicitwait(driver);
         
-	       // capture sort by function elements
-	        
-	        Capture_dropdown_elements.Execute(driver, locator);
-	        
-	        
-	        
-	        
-	    System.out.println("Verifysort by function elements clickable.......");
-	    
-	    
-	     
-	        // id of the dropdown
-	        WebElement dropdown = locator;
-	        
-	        // capture all the proprty type elements
-	        
-	        List<WebElement>list = dropdown.findElements(By.tagName("option"));
-	        
-	        for(int i=0; i<list.size(); i++){
-	        	
-	        	
-	        	Dropdown_Feature.Execute_index(driver, locator, i);
-	        	
-	        	
-	        	
-	        	// Take screenshot - listing_search
+        
+       // Select ListingPerPage --
+        
+        
+        Dropdown_Feature.Execute_index(driver, locator1, value);
+        
+        
+         
+        // 	Validate ListingPerPage --10 
+    	
+    	
+       //int i =3;
+		List<WebElement> listing = driver.findElements(By.className("dev-id"));
 
-		        Take_Screenshot.Execute(driver , "./Execution_Screenshots/Take_Screenshots/sort_by_feature("+ i+").png");
+		int Actual = listing.size();
+		
+		//System.out.println("No. of Listing per page is :  " +  listing.size());
 			
-	        	
-	        }
+		Assert.assertEquals(Actual, expected);
+		
+		
+		System.out.println("No. of Listing per page Expected :  " +  expected);
+		
+		System.out.println("No. of Listing per page Actual :  " +  Actual);
+		
+    	
+   	    if(expected==Actual)
+	       {
+	       System.out.println(   ANSI_GREEN + "Assertion Passed" + ANSI_RESET );
+	       }
+	       else
+	       {
+	       System.out.println(   ANSI_RED + "Assertion Failed"  + ANSI_RESET);
+	       }
+   	  	
 	        
 	        
-	        
-	        
-	     
-
-
+        
+	   
+	
 	        
 		
 		

@@ -1,12 +1,10 @@
-package Base_Utils;
+package Base_Utils_Verify;
 
 
+ 
 
 import java.util.List;
  
-import java.util.concurrent.TimeUnit;
-
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -16,11 +14,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
  
 import org.openqa.selenium.WebElement;
- 
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
  
 //import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.*;
@@ -38,7 +31,7 @@ public class Verify_Broken_Links {
 	
 
 	
-	public static void Execute(WebDriver driver)   {
+	public static void Execute(WebDriver driver, String page)   {
 
 		try {
 			
@@ -48,7 +41,7 @@ public class Verify_Broken_Links {
 			
 			anchorTagsList.addAll(driver.findElements(By.tagName("img")));
 			
-			System.out.println("Total no. of links are "+ anchorTagsList.size());
+			System.out.println("Total no. of links on "+ page + anchorTagsList.size());
 			
 			
 			for (WebElement anchorTagElement : anchorTagsList) {
@@ -61,9 +54,8 @@ public class Verify_Broken_Links {
 					
 					
 					
-
-					if (url != null && !url.contains("javascript")&& !url.contains("") )
-
+					if (url != null && !url.contains("javascript")&& !url.contains("") && !url.contains("")
+							&& !url.contains("") && !url.contains("")  )
 					
 					
 					

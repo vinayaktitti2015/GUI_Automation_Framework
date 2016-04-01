@@ -22,7 +22,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import App_Modules.Constant_Baseurl;
+import App_Modules.Constant_baseurl;
 import App_Modules.Verify_SortBy_ListingPerPage;
 import Base_Utils.Capture_dropdown_elements;
 import Base_Utils.Dropdown_Feature;
@@ -30,7 +30,13 @@ import Base_Utils.Dropdown_elements_clickable;
 import Base_Utils.Opening_Browser;
 import Base_Utils.Take_Screenshot;
 import Base_Utils.Verify_Header;
+import Base_Utils_Verify.Verify_Text;
 import POM_Files.Newlaunch_POM_File;
+
+
+
+import App_Modules.Constant_baseurl;
+
 
 
 public class Newlaunch_Frontend {
@@ -63,7 +69,7 @@ public class Newlaunch_Frontend {
 
 
         // Launch the URL
-        driver.get(Constant_Baseurl.baseurl);
+        driver.get(Constant_baseurl.baseurl);
 
         //Maximize the browser
         driver.manage().window().maximize();
@@ -348,7 +354,7 @@ public class Newlaunch_Frontend {
              
         	// Execute Verify_SortBy_ListingPerPage app module
             
-        	Verify_SortBy_ListingPerPage.Execute(driver, page.sort_by);
+        	Verify_SortBy_ListingPerPage.Execute(driver, page.sort_by, 0, 10);
         
 
 
@@ -388,11 +394,11 @@ public class Newlaunch_Frontend {
 
         // Verify Header Titles
 
-        page.openfor_headline.isDisplayed();
+        //page.openfor_headline.isDisplayed();
 
-        page.sub_headline.isDisplayed();
+        //page.sub_headline.isDisplayed();
 
-        page.register_title.isDisplayed();
+        //page.register_title.isDisplayed();
 
 
         // click Register btn - Verify error validation Text
@@ -521,6 +527,7 @@ public class Newlaunch_Frontend {
          // Assertion - TY Message
          
          Verify_Header.Execute(driver, page.thankyou_bottom_message, "Thank you, your message have been successfully sent out.");
+
          
          
         
