@@ -15,6 +15,7 @@ Library Contains:
 6. Actions class usage.
 7. Actions - dropdown, click functions
 8. Capture screenshot functions.
+9. Properties file usage, etc., 
 
 
 # Usage of functions in class:

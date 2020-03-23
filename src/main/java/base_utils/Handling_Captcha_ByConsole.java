@@ -17,7 +17,7 @@ public class Handling_Captcha_ByConsole {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String captcha;
-        System.out.println("Please Enter the CAPTCHA Code:: ");
+        System.out.println("Enter the CAPTCHA Code:: ");
         captcha = br.readLine();
         System.out.println("Entered  CAPTCHA Code is:: " + captcha);
     }
