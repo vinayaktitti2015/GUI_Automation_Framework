@@ -8,7 +8,7 @@ central repo & call the ready to execute functions.
 
 Library Contains:
 1. Custom wait commands.
-2. Asserions.
+2. Assertions.
 3. Excel handling.
 4. Database handling.
 5. JavascriptExecutor usage.
