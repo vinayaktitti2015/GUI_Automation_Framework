@@ -1,12 +1,24 @@
-# Web_Automation_Framework_UDF
-# User Defined Funtions
+# Web_Automation_Framework
+# User Defined Functions
 
-This is a java-based automation reusable library. User can import the given `jar`file into 
-project & call the ready to execute functions. 
+This is a java-based automation reusable library. User can import the above 
+`Automation_UserDefinedFunctions.jar` file into your project & call the ready to execute functions. 
+
+
+Library Contains:
+1. Custom wait commands.
+2. Asserions.
+3. Excel handling.
+4. Database handling.
+5. JavascriptExecutor usage.
+6. Actions class usage.
+7. Actions - dropdown, click functions
+8. Capture screenshot functions.
+
 
 # Usage of functions in class:
 
-1. Dropwown_Util.SelectByIndex(driver, locator);
+1. Dropdown_Util.SelectByIndex(driver, locator);
 Ex: to use dropdown function
 
 2. Assertion.TextEquals(driver, locator, expected);

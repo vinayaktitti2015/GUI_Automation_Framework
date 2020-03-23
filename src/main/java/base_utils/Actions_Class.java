@@ -36,9 +36,9 @@ public class Actions_Class {
         act.dragAndDrop(drag, drop).build().perform();
     }
 
-    public static void Select_AutoSuggest(WebDriver driver, WebElement locator, String strng)
+    public static void select_AutoSuggest(WebDriver driver, WebElement locator, String strng)
             throws InterruptedException {
-        // Type something on Skill textbox
+        // Type something on textbox
         locator.sendKeys(strng);
 
         // Create object on Actions class
