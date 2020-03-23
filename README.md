@@ -2,7 +2,8 @@
 # User Defined Functions
 
 This is a java-based automation reusable library. User can import the above 
-`Automation_UserDefinedFunctions.jar` file into your project & call the ready to execute functions. 
+`Automation_UserDefinedFunctions.jar` file into your build project such as import from Maven 
+central repo & call the ready to execute functions. 
 
 
 Library Contains:
